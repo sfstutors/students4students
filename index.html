@@ -1,0 +1,61 @@
+ <!-- Owl Stylesheets -->
+
+    <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
+	<style>
+		.item{background-color: green;height: 50px;text-align: center; color: #fff;padding-top: 1rem;}
+	</style>
+
+    <!-- javascript -->
+    <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js"></script>
+    <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+
+    <!--  Demos -->
+    <section id="demos">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <h4>Home</h4>
+            </div>
+            <div class="item">
+              <h4>About</h4>
+            </div>
+            <div class="item">
+              <h4>Courses</h4>
+              
+            </div>
+            <div class="item">
+              <h4>Our Tutors</h4>
+            </div>
+            <div class="item">
+              <h4>Gallery</h4>
+            </div>
+            <div class="item">
+              <h4>Contact</h4>
+            </div>
+          
+          <script>
+            $(document).ready(function() {
+              var owl = $('.owl-carousel');
+              owl.owlCarousel({
+                margin: 10,
+                nav: true,
+                loop: true,
+                responsive: {
+                  0: {
+                    items: 1
+                  },
+                  600: {
+                    items: 3
+                  },
+                  1000: {
+                    items: 5
+                  }
+                }
+              })
+            })
+          </script>
+        </div>
+      </div>
+    </section>
