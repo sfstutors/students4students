@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-  color: #86db9f;
+  color: #ad102d;
   text-decoration: none;
 }
 
@@ -509,7 +509,7 @@ section {
   width: 120px;
   height: 1px;
   display: inline-block;
-  background: #9ae1af;
+  background: #72061b;
   margin: 4px 10px;
 }
 
