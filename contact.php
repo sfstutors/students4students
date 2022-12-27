@@ -1,3 +1,22 @@
+<?php
+  if($_POST["submit"]) {
+    $name = $_POST['name'];
+    $visitor_email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $email_from = 'info.sfstutoring@gmail.com';
+    $email_subject = "[EXTERNAL] $subject";
+    $email_body = "You have received a new message from $name.\n".
+                   "Here is the message:\n $message".
+
+    $to = "info.sfstutoring@gmail.com";
+    $headers = "From: $email_from \r\n";
+    $headers .= "Reply-To: $visitor_email \r\n";
+    mail($to,$email_subject,$email_body,$headers);
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +24,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Calendar | Students for Students</title>
+  <title>Contact | Students for Students</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -65,35 +84,101 @@
             </ul>
           </li>
           <li><a href="team.html">Team</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li class="drop-down" class="active"><a href="">More</a>
+          <li class="active"><a href="contact.html">Contact</a></li>
+          <li class="drop-down"><a href="">More</a>
             <ul>
-              <li class="active"><a href="calendar.html">Calendar </a></li>
+              <li><a href="calendar.html">Calendar </a></li>
               <li><a href="gallery.html">Gallery</a></li>
             </ul>
           </li>
           </ul>
       </nav><!-- .nav-menu -->
+
       <a href="student-registration.html" class="get-started-btn">Register Now</a>
 
     </div>
   </header><!-- End Header -->
-<p>
-
-</p>
 
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2>2022-2023 Calendar</h2>
+        <h2>Contact Us</h2>
+        <p>We <em>want</em> to hear from you! Get in touch using the information below, or send us a message by filling out the form.</p>
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <div align="center">
-      <iframe src="https://calendar.google.com/calendar/embed?src=info.sfstutoring%40gmail.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-    </div>
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>Online Zoom Classes</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p><a href="mailto:info.sfstutoring@gmail.com">info.sfstutoring@gmail.com</a></p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>510-320-8186</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:1" data-msg="Please enter at least 1 character" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="mb-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+      <p></p>
+      <!--div data-aos="fade-up">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.2611085065305!2d-122.05472668468819!3d37.57246877979682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbe25b5b3bf3f%3A0x28d3947b675fe8cc!2sArdenwood%20Elementary%20School!5e0!3m2!1sen!2sus!4v1596411761661!5m2!1sen!2sus" width=" 1500" height="550" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div-->
+
+    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
@@ -111,7 +196,7 @@
               Fremont, CA 94555<br>
               United States <br><br>
               <strong>Phone:</strong> 510-320-8186<br>
-              <strong>Email:</strong> info.sfstutoring@gmail.com<br>
+              <strong>Email:</strong> <a href="mailto:info.sfstutoring@gmail.com">info.sfstutoring@gmail.com</a><br>
             </p>
           </div>
 
@@ -141,7 +226,7 @@
     <div class="container d-md-flex py-4">
 
       <div class="mr-md-auto text-center text-md-left">
-       <div class="copyright">
+        <div class="copyright">
           &copy; Copyright <strong><span>Students for Students</span></strong>. All Rights Reserved
         </div>
         <div class="credits">

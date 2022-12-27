@@ -1,3 +1,22 @@
+<?php
+  if($_POST["submit"]) {
+    $name = $_POST['name'];
+    $visitor_email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $email_from = 'info.sfstutoring@gmail.com';
+    $email_subject = "[EXTERNAL] $subject";
+    $email_body = "You have received a new message from $name.\n".
+                   "Here is the message:\n $message".
+
+    $to = "info.sfstutoring@gmail.com";
+    $headers = "From: $email_from \r\n";
+    $headers .= "Reply-To: $visitor_email \r\n";
+    mail($to,$email_subject,$email_body,$headers);
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -102,7 +121,7 @@
               <div class="address">
                 <i class="icofont-google-map"></i>
                 <h4>Location:</h4>
-                <p>33955 Emilia Ln, Fremont, CA 94555</p>
+                <p>Online Zoom Classes</p>
               </div>
 
               <div class="email">
@@ -148,10 +167,9 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
+
             </form>
-
           </div>
-
         </div>
 
       </div>
@@ -200,7 +218,7 @@
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div>
-          
+
         </div>
       </div>
     </div>
