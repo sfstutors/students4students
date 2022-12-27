@@ -84,7 +84,7 @@
             </ul>
           </li>
           <li><a href="team.html">Team</a></li>
-          <li class="active"><a href="contact.html">Contact</a></li>
+          <li class="active"><a href="contact.php">Contact</a></li>
           <li class="drop-down"><a href="">More</a>
             <ul>
               <li><a href="calendar.html">Calendar </a></li>
